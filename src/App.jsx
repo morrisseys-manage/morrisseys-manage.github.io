@@ -97,8 +97,7 @@ function App() {
                 <img src="/logo.png" alt="Logo" style={{height: '32px', width: '32px', objectFit: 'contain', verticalAlign: 'middle'}} />
               </li>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/our-story">Our Story</Link></li>
-              <li><Link to="/photos">Photos</Link></li>
+              <li><Link to="/photos">Our Story</Link></li>
               <li><Link to="/events">Events</Link></li>
               <li><Link to="/travel">Travel</Link></li>
               <li><Link to="/registry">Registry</Link></li>
