@@ -27,53 +27,34 @@ const Photos = () => {
     ];
 
     return (
-        <section className="photos-section" style={{
-            padding: '4rem 0',
+        <section className="photos-section" style={{ 
+            padding: '4rem 0', 
             background: 'rgba(255, 255, 255, 0.95)',
             minHeight: '80vh'
         }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <h2 className="euphoria-script-regular" style={{
-                        fontSize: '3rem',
-                        color: 'var(--brand)',
-                        marginBottom: '1rem'
+                    <h2 className="euphoria-script-regular" style={{ 
+                        fontSize: '3rem', 
+                        color: 'var(--brand)', 
+                        marginBottom: '1rem' 
                     }}>
                         Our Journey Together
                     </h2>
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: '#666',
-                        maxWidth: '600px',
-                        margin: '0 auto'
+                    <p style={{ 
+                        fontSize: '1.2rem', 
+                        color: '#666', 
+                        maxWidth: '900px', 
+                        margin: '0 auto',
+                        textAlign: 'left',
+                        lineHeight: '1.8'
                     }}>
-                        Aidan and Rebecca’s journey began on a dating app in late January 2023, where Aidan was instantly captivated by Rebecca's charming profile. Her love for <b>French toast</b>, <b>turtles</b>, and <b>bird banding</b> immediately caught his attention. But beyond her quirky interests, it was Rebecca's beauty and warmth that truly drew him in. Without hesitation, Aidan asked her out to dinner just days later. Although Rebecca was nervous about going on a blind date, she felt a divine nudge that gave her the courage to go.
-                    </p>
-
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: '#666',
-                        maxWidth: '600px',
-                        margin: '0 auto'
-                    }}>
+                        Aidan and Rebecca's journey began on a dating app in late January 2023, where Aidan was instantly captivated by Rebecca's charming profile. Her love for <b>French toast</b>, <b>turtles</b>, and <b>bird banding</b> immediately caught his attention. But beyond her quirky interests, it was Rebecca's beauty and warmth that truly drew him in. Without hesitation, Aidan asked her out to dinner just days later. Although Rebecca was nervous about going on a blind date, she felt a divine nudge that gave her the courage to go.
+                        <br /><br />
                         When Rebecca walked into the restaurant, Aidan was struck by how even more beautiful she appeared in person. Their first date felt magical as they connected over laughter and deep conversation for hours, eventually being the last ones to leave the restaurant. Just before Aidan left for a family vacation in Florida, he realized he had already begun to miss Rebecca—it was truly love at first sight for them both. They made it a point to chat almost daily, with Aidan even bringing back seashells from Florida as a sweet memento of their budding romance.
-                    </p>
-
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: '#666',
-                        maxWidth: '600px',
-                        margin: '0 auto'
-                    }}>
+                        <br /><br />
                         On <b>St. Patrick's Day 2023</b>, Aidan and Rebecca officially became a couple. Aidan soon moved back to the suburbs to be closer to family and dedicate himself to Rebecca, knowing from the start that their connection was something special and divinely ordained. Together, they nurtured a relationship centered on love and faith, helping each other grow into better versions of themselves.
-                    </p>
-
-                    <p style={{
-                        fontSize: '1.2rem',
-                        color: '#666',
-                        maxWidth: '600px',
-                        margin: '0 auto'
-                    }}>
+                        <br /><br />
                         Fast forward to <b>September 2025</b>, Aidan found himself with the same butterflies he experienced on their first date when he proposed to Rebecca on the sandy beaches of the Florida Keys. Surrounded by the beauty of the ocean, they spent the week basking in their new engagement, ready to embrace the next wonderful chapter of their life together.
                     </p>
                 </div>
@@ -86,9 +67,9 @@ const Photos = () => {
                     margin: '0 auto'
                 }}>
                     {photos.map((photo, index) => (
-                        <div
-                            key={index}
-                            className="photo-item"
+                        <div 
+                            key={index} 
+                            className="photo-item" 
                             style={{
                                 backgroundColor: '#fff',
                                 borderRadius: 'var(--radius)',
@@ -105,13 +86,13 @@ const Photos = () => {
                                 e.currentTarget.style.boxShadow = 'var(--shadow)';
                             }}
                         >
-                            <div style={{
-                                aspectRatio: '4/3',
+                            <div style={{ 
+                                aspectRatio: '4/3', 
                                 overflow: 'hidden',
                                 background: 'linear-gradient(45deg, #f0f0f0, #e0e0e0)'
                             }}>
-                                <img
-                                    src={photo.src}
+                                <img 
+                                    src={photo.src} 
                                     alt={photo.alt}
                                     style={{
                                         width: '100%',
@@ -161,9 +142,9 @@ const Photos = () => {
                         Photos Captured & Produced by:
                     </h3>
                     <p style={{ color: '#666', lineHeight: '1.4', margin: 0 }}>
-                        <a
-                            href="https://www.norainnoflowersphotography.com"
-                            target="_blank"
+                        <a 
+                            href="https://www.norainnoflowersphotography.com" 
+                            target="_blank" 
                             rel="noopener noreferrer"
                             style={{
                                 color: 'var(--brand)',
