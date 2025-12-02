@@ -4,7 +4,7 @@ import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import './assets/styles.css';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
-// SHA-256 hash of your password (e.g., for 'SummerLove2026')
+// SHA-256 hash of your password (e.g., for 'SL26')
 const PASSWORD_HASH = '178cc830e527a037c9768bd7abd8f5a307034c2430d49c5d21d43f37aa88ad28'; // Replace with real hash
 
 function sha256(str) {
@@ -35,7 +35,15 @@ function PasswordGate({ onUnlock }) {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', padding: '0 1rem' }}>
+    <div style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/hero.jpg") center/cover no-repeat',
+      backgroundAttachment: 'fixed',
+      padding: '0 1rem' 
+    }}>
       <form onSubmit={handleSubmit} style={{ background: '#fff', padding: '2rem', borderRadius: '1rem', boxShadow: '0 4px 24px rgba(0,0,0,0.2)', minWidth: 320, width: '100%', maxWidth: 400 }}>
         <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
           <span className="euphoria-script-regular" style={{ fontSize: '2.2rem', color: '#222', display: 'block', marginBottom: '0.25rem' }}>Aidan &amp; Rebecca</span>
