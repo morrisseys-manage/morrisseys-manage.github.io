@@ -14,6 +14,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route index element={<div></div>} />
           <Route path="events" element={
             <Suspense fallback={<div>Loading…</div>}>
               <Events />
