@@ -165,7 +165,7 @@ function App() {
 
       <footer className="site-footer">
         <div className="container">
-          <p><span className="subtitle euphoria-script-regular"id="year"></span> A &amp; R — See you on the big day!</p>
+          <p className="euphoria-script-regular"><span id="year"></span> A &amp; R — See you on the big day!</p>
         </div>
       </footer>
     </div>
