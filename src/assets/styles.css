@@ -53,6 +53,7 @@ body {
 			max-width: 1000px;
 			margin-left: auto;
 			margin-right: auto;
+			padding: 0 clamp(1rem, 4vw, 2rem); /* Add responsive padding */
 			/* Remove flex to avoid constraining header/footer */
 }
 
@@ -72,18 +73,31 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: .75rem 0;
+	padding: clamp(0.5rem, 2vw, 0.75rem) 0;
 }
-.logo { font-weight: 700; letter-spacing: .06em; text-decoration: none; color: var(--fg); }
+.logo { 
+	font-weight: 700; 
+	letter-spacing: .06em; 
+	text-decoration: none; 
+	color: var(--fg);
+	font-size: clamp(1.1rem, 3vw, 1.2rem);
+}
 .menu {
 	list-style: none;
 	display: flex;
-	gap: 1rem;
+	gap: clamp(0.5rem, 2vw, 1rem);
 	margin: 0 auto;
 	padding: 0;
 	justify-content: center;
+	flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
-.menu a { text-decoration: none; color: var(--fg); padding: .5rem .75rem; border-radius: 999px; }
+.menu a { 
+	text-decoration: none; 
+	color: var(--fg); 
+	padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.6rem, 2vw, 0.75rem); 
+	border-radius: 999px;
+	font-size: clamp(0.9rem, 2.2vw, 1rem);
+}
 .menu a:hover, .menu a:focus { background: var(--brand-2); outline: none; }
 
 .nav-toggle { display: none; }
@@ -92,6 +106,26 @@ body {
 	.nav-toggle { display: inline-block; background: transparent; border: 1px solid #ddd; padding: .4rem .6rem; border-radius: 8px; }
 	.menu { display: none; position: absolute; right: 1rem; top: 60px; background: var(--card); padding: .5rem; box-shadow: var(--shadow); border-radius: var(--radius); flex-direction: column; }
 	.menu.open { display: flex; }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 600px) {
+	.header-inner {
+		padding: 0.5rem 1rem;
+	}
+	.logo {
+		font-size: 1.1rem;
+	}
+	.menu {
+		gap: 0.3rem;
+	}
+	.menu a {
+		padding: 0.4rem 0.6rem;
+		font-size: 0.9rem;
+	}
+	.container {
+		padding: 0 1rem;
+	}
 }
 
 /* Hero */
@@ -105,14 +139,32 @@ body {
 .hero h1 {
 	font-size: clamp(2.2rem, 7vw, 4rem);
 	margin: 0 0 .25rem 0;
+	padding: 0 1rem; /* Add padding for very small screens */
 }
-.subtitle { color: rgb(255, 255, 255); font-weight: 500; font-size: clamp(1rem, 1.5rem, 2rem); margin: 0 0 1rem 0; }
-.date-location { font-weight: 500; font-size: clamp(1rem, 2rem, 2.5rem); margin-bottom: 1.5rem; }
+.subtitle { 
+	color: rgb(255, 255, 255); 
+	font-weight: 500; 
+	font-size: clamp(1rem, 3vw, 2rem); 
+	margin: 0 0 1rem 0;
+	padding: 0 1rem;
+}
+.date-location { 
+	font-weight: 500; 
+	font-size: clamp(1rem, 4vw, 2.5rem); 
+	margin-bottom: 1.5rem;
+	padding: 0 1rem;
+}
 
 /* Buttons */
 .btn {
-	display: inline-block; background: var(--brand); color: white; padding: .75rem 1.25rem;
-	border-radius: 999px; text-decoration: none; box-shadow: var(--shadow);
+	display: inline-block; 
+	background: var(--brand); 
+	color: white; 
+	padding: clamp(0.6rem, 2.5vw, 0.75rem) clamp(1rem, 3vw, 1.25rem);
+	border-radius: 999px; 
+	text-decoration: none; 
+	box-shadow: var(--shadow);
+	font-size: clamp(0.9rem, 2.2vw, 1rem);
 }
 .btn:hover, .btn:focus { filter: brightness(0.95); }
 
@@ -137,28 +189,28 @@ body {
 /* FlipClock Styles */
 .flip-clock {
 	--fcc-flip-duration: 0.5s;
-	--fcc-spacing: 8px;
-	--fcc-digit-block-width: 40px;
-	--fcc-digit-block-height: 60px;
+	--fcc-spacing: clamp(4px, 2vw, 8px);
+	--fcc-digit-block-width: clamp(30px, 8vw, 40px);
+	--fcc-digit-block-height: clamp(45px, 12vw, 60px);
 	--fcc-digit-block-radius: 5px;
-	--fcc-digit-block-spacing: 5px;
-	--fcc-digit-font-size: 30px;
+	--fcc-digit-block-spacing: clamp(3px, 1vw, 5px);
+	--fcc-digit-font-size: clamp(20px, 6vw, 30px);
 	--fcc-digit-color: white;
-	--fcc-label-font-size: 10px;
+	--fcc-label-font-size: clamp(8px, 2vw, 10px);
 	--fcc-label-color: #ffffff;
 	--fcc-background: rgba(0, 0, 0); /* semi-opaque digit cards */
 	--fcc-divider-height: 0;
-	--fcc-separator-size: 6px;
+	--fcc-separator-size: clamp(4px, 1.5vw, 6px);
 	--fcc-separator-color: #ffffff;
 }
 
 /* Events */
 .event {
 	background: var(--card);
-	padding: 1rem 1.25rem;
+	padding: clamp(0.8rem, 3vw, 1rem) clamp(1rem, 4vw, 1.25rem);
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
-	margin: 1rem 0;
+	margin: clamp(0.8rem, 2vw, 1rem) 0;
 }
 
 /* Photos */

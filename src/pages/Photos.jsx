@@ -28,26 +28,27 @@ const Photos = () => {
 
     return (
         <section className="photos-section" style={{ 
-            padding: '4rem 0', 
+            padding: 'clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem)', 
             background: 'rgba(255, 255, 255, 0.95)',
             minHeight: '80vh'
         }}>
             <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
                     <h2 className="euphoria-script-regular" style={{ 
-                        fontSize: '3rem', 
+                        fontSize: 'clamp(2rem, 6vw, 3rem)', 
                         color: 'var(--brand)', 
-                        marginBottom: '1rem' 
+                        marginBottom: 'clamp(0.5rem, 2vw, 1rem)' 
                     }}>
                         Our Journey Together
                     </h2>
                     <p style={{ 
-                        fontSize: '1.2rem', 
+                        fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', 
                         color: '#666', 
                         maxWidth: '900px', 
                         margin: '0 auto',
                         textAlign: 'left',
-                        lineHeight: '1.8'
+                        lineHeight: '1.8',
+                        padding: '0 clamp(1rem, 3vw, 2rem)'
                     }}>
                         Aidan and Rebecca's journey began on a dating app in late January 2023, where Aidan was instantly captivated by Rebecca's charming profile. Her love for <b>French toast</b>, <b>turtles</b>, and <b>bird banding</b> immediately caught his attention. But beyond her quirky interests, it was Rebecca's beauty and warmth that truly drew him in. Without hesitation, Aidan asked her out to dinner just days later. Although Rebecca was nervous about going on a blind date, she felt a divine nudge that gave her the courage to go.
                         <br /><br />
@@ -61,10 +62,11 @@ const Photos = () => {
 
                 <div className="photo-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '1.5rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+                    gap: 'clamp(1rem, 3vw, 1.5rem)',
                     maxWidth: '1200px',
-                    margin: '0 auto'
+                    margin: '0 auto',
+                    padding: '0 clamp(1rem, 3vw, 2rem)'
                 }}>
                     {photos.map((photo, index) => (
                         <div 
@@ -127,21 +129,23 @@ const Photos = () => {
 
                 {/* Photographer credit */}
                 <div style={{
-                    marginTop: '2rem',
-                    padding: '1.25rem 1.5rem',
+                    marginTop: 'clamp(1.5rem, 4vw, 2rem)',
+                    padding: 'clamp(1rem, 3vw, 1.25rem) clamp(1rem, 4vw, 1.5rem)',
                     background: 'rgba(79, 121, 66, 0.1)',
                     borderRadius: 'var(--radius)',
                     textAlign: 'center',
                     maxWidth: '400px',
-                    margin: '2rem auto 0',
+                    margin: 'clamp(1.5rem, 4vw, 2rem) auto 0',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    marginLeft: 'clamp(1rem, 3vw, auto)',
+                    marginRight: 'clamp(1rem, 3vw, auto)'
                 }}>
-                    <h3 style={{ color: 'var(--brand)', marginBottom: '0.5rem', fontSize: '1.1rem', margin: '0 0 0.5rem 0' }}>
+                    <h3 style={{ color: 'var(--brand)', marginBottom: '0.5rem', fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', margin: '0 0 0.5rem 0' }}>
                         Photos Captured & Produced by:
                     </h3>
-                    <p style={{ color: '#666', lineHeight: '1.4', margin: 0 }}>
+                    <p style={{ color: '#666', lineHeight: '1.4', margin: 0, fontSize: 'clamp(0.9rem, 2.2vw, 1rem)' }}>
                         <a 
                             href="https://www.norainnoflowersphotography.com" 
                             target="_blank" 
