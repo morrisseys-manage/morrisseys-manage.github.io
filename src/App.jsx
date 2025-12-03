@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import './assets/styles.css';
@@ -70,6 +70,7 @@ function PasswordGate({ onUnlock }) {
 function App() {
   const [unlocked, setUnlocked] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navRef = useRef(null);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -88,6 +89,20 @@ function App() {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    }
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [mobileMenuOpen]);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -100,7 +115,7 @@ function App() {
     <div className="site-wrapper">
       <header className="site-header">
         <div className="container header-inner">
-          <nav aria-label="Primary">
+          <nav aria-label="Primary" ref={navRef}>
             <button 
               className="nav-toggle" 
               aria-expanded={mobileMenuOpen} 

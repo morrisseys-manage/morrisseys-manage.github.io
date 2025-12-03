@@ -106,21 +106,28 @@ body {
 	display: none; 
 	position: absolute;
 	top: 50%;
-	right: 1rem;
+	right: clamp(1rem, 3vw, 2rem);
 	transform: translateY(-50%);
-	background: transparent; 
-	border: 2px solid rgba(255,255,255,0.5); 
+	background: var(--brand); 
+	border: 2px solid var(--brand); 
 	color: white;
-	padding: .5rem .75rem; 
+	padding: .6rem .8rem; 
 	border-radius: 8px;
 	font-size: 1.2rem;
 	cursor: pointer;
 	z-index: 100;
+	box-shadow: 0 2px 8px rgba(79, 121, 66, 0.3);
+	transition: all 0.2s ease;
 }
 
 .nav-toggle:hover {
-	background: rgba(255,255,255,0.1);
-	border-color: rgba(255,255,255,0.8);
+	background: #3e6035;
+	border-color: #3e6035;
+	box-shadow: 0 4px 12px rgba(79, 121, 66, 0.4);
+}
+
+.nav-toggle:active {
+	transform: translateY(-50%) scale(0.95);
 }
 
 @media (max-width: 720px) {
@@ -130,7 +137,7 @@ body {
 	.menu { 
 		display: none; 
 		position: absolute; 
-		right: 1rem; 
+		right: clamp(1rem, 3vw, 2rem); 
 		top: 70px; 
 		background: rgba(60, 60, 60, 0.95); 
 		backdrop-filter: blur(10px);
@@ -140,6 +147,7 @@ body {
 		flex-direction: column;
 		min-width: 200px;
 		border: 1px solid rgba(255,255,255,0.2);
+		animation: slideIn 0.2s ease;
 	}
 	.menu.open { 
 		display: flex; 
@@ -156,12 +164,26 @@ body {
 		padding: 0.75rem 1rem;
 		border-radius: 6px;
 		margin: 0.25rem 0;
+		transition: background-color 0.2s ease;
 	}
 	.menu a:hover, .menu a:focus {
 		background: var(--brand);
 	}
 	.header-inner {
 		position: relative;
+		padding-right: clamp(4rem, 12vw, 6rem); /* Add space for hamburger button */
+	}
+}
+
+/* Smooth slide-in animation for mobile menu */
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
