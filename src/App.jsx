@@ -69,6 +69,7 @@ function PasswordGate({ onUnlock }) {
 
 function App() {
   const [unlocked, setUnlocked] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -82,6 +83,15 @@ function App() {
     }
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   if (!unlocked) {
     return <PasswordGate onUnlock={() => setUnlocked(true)} />;
   }
@@ -91,8 +101,15 @@ function App() {
       <header className="site-header">
         <div className="container header-inner">
           <nav aria-label="Primary">
-            <button className="nav-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
-            <ul id="main-menu" className="menu">
+            <button 
+              className="nav-toggle" 
+              aria-expanded={mobileMenuOpen} 
+              aria-controls="main-menu"
+              onClick={toggleMobileMenu}
+            >
+              {mobileMenuOpen ? '✕' : '☰'}
+            </button>
+            <ul id="main-menu" className={`menu ${mobileMenuOpen ? 'open' : ''}`}>
               <li style={{marginRight: '0.5rem'}}>
                 <img src="/logo.png" alt="Logo" style={{height: '32px', width: '32px', objectFit: 'contain', verticalAlign: 'middle'}} />
               </li>
