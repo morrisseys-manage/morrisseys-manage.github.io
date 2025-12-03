@@ -73,7 +73,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: clamp(0.5rem, 2vw, 0.75rem) 0;
+	padding: clamp(0.75rem, 2.5vw, 1rem) 0;
+	min-height: 60px; /* Ensure minimum height for button */
 }
 .logo { 
 	font-weight: 700; 
@@ -111,13 +112,18 @@ body {
 	background: var(--brand); 
 	border: 2px solid var(--brand); 
 	color: white;
-	padding: .6rem .8rem; 
-	border-radius: 8px;
-	font-size: 1.2rem;
+	padding: .5rem .7rem; 
+	border-radius: 6px;
+	font-size: 1.1rem;
 	cursor: pointer;
 	z-index: 100;
 	box-shadow: 0 2px 8px rgba(79, 121, 66, 0.3);
 	transition: all 0.2s ease;
+	min-width: 44px; /* Ensure minimum touch target */
+	min-height: 44px; /* Ensure minimum touch target */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .nav-toggle:hover {
@@ -132,13 +138,18 @@ body {
 
 @media (max-width: 720px) {
 	.nav-toggle { 
-		display: block; 
+		display: flex; 
+	}
+	.header-inner {
+		position: relative;
+		padding: 0.75rem clamp(4rem, 12vw, 6rem) 0.75rem 0; /* Extra padding on right for button */
+		min-height: 64px; /* Ensure enough space for mobile button */
 	}
 	.menu { 
 		display: none; 
 		position: absolute; 
 		right: clamp(1rem, 3vw, 2rem); 
-		top: 70px; 
+		top: calc(100% + 8px); /* Position below header */
 		background: rgba(60, 60, 60, 0.95); 
 		backdrop-filter: blur(10px);
 		padding: 1rem; 
@@ -168,10 +179,6 @@ body {
 	}
 	.menu a:hover, .menu a:focus {
 		background: var(--brand);
-	}
-	.header-inner {
-		position: relative;
-		padding-right: clamp(4rem, 12vw, 6rem); /* Add space for hamburger button */
 	}
 }
 
