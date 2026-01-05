@@ -8,6 +8,7 @@ import './index.css';
 
 const Events = lazy(() => import('./pages/Events.jsx'));
 const Photos = lazy(() => import('./pages/Photos.jsx'));
+const Registry = lazy(() => import('./pages/Registry.jsx'));
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,6 +24,11 @@ createRoot(document.getElementById('root')).render(
           <Route path="photos" element={
             <Suspense fallback={<div>Loading…</div>}>
               <Photos />
+            </Suspense>
+          } />
+          <Route path="registry" element={
+            <Suspense fallback={<div>Loading…</div>}>
+              <Registry />
             </Suspense>
           } />
         </Route>
