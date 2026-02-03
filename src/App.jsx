@@ -125,9 +125,6 @@ function App() {
               {mobileMenuOpen ? '✕' : '☰'}
             </button>
             <ul id="main-menu" className={`menu ${mobileMenuOpen ? 'open' : ''}`}>
-              <li style={{marginRight: '0.5rem'}}>
-                <img src="/logo.png" alt="Logo" style={{height: '32px', width: '32px', objectFit: 'contain', verticalAlign: 'middle'}} />
-              </li>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/photos">Our Story</Link></li>
               <li><Link to="/events">Events</Link></li>
