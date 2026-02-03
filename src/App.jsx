@@ -130,7 +130,6 @@ function App() {
               <li><Link to="/events">Events</Link></li>
               <li><Link to="/travel">Travel</Link></li>
               <li><Link to="/registry">Registry</Link></li>
-              <li><Link to="/rsvp">RSVP</Link></li>
             </ul>
           </nav>
         </div>
@@ -153,7 +152,23 @@ function App() {
                   showSeparators
                 />
               </div>
-              <p><Link className="btn rsvp-btn" to="/rsvp">RSVP</Link></p>
+              <p>
+                <a 
+                  className="btn rsvp-btn" 
+                  href="https://aidanandrebeccawedding.rsvpify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
+                    padding: 'clamp(1rem, 3vw, 1.5rem) clamp(2rem, 5vw, 3rem)',
+                    borderRadius: '999px',
+                    fontWeight: '600',
+                    letterSpacing: '0.1em'
+                  }}
+                >
+                  RSVP
+                </a>
+              </p>
             </div>
           </section>
         )}
