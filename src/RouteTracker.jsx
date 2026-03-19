@@ -7,7 +7,7 @@ function RouteTracker() {
   useEffect(() => {
     // For Google Analytics 4
     if (window.gtag) {
-      window.gtag('config', 'YOUR_GA_MEASUREMENT_ID', {
+      window.gtag('config', 'G-S721EYEK9W', {
         page_path: location.pathname,
       });
     }
