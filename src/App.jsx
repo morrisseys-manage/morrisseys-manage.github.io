@@ -3,6 +3,7 @@ import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown';
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 import './assets/styles.css';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import RouteTracker from './RouteTracker.jsx';
 
 // SHA-256 hash of your password (e.g., for 'SL26')
 const PASSWORD_HASH = '178cc830e527a037c9768bd7abd8f5a307034c2430d49c5d21d43f37aa88ad28'; // Replace with real hash
