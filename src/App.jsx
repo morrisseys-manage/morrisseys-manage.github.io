@@ -113,8 +113,9 @@ function App() {
   }
 
   return (
-    <div className="site-wrapper">
-      <header className="site-header">
+  <div className="site-wrapper">
+    <RouteTracker />
+    <header className="site-header">
         <div className="container header-inner">
           <nav aria-label="Primary" ref={navRef}>
             <button 
