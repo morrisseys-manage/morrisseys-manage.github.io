@@ -1,7 +1,6 @@
-
-import React, { StrictMode, lazy, Suspense } from 'react';
+import React, { StrictMode, lazy, Suspense, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useSearchParams } from 'react-router-dom';
 
 import App from './App.jsx';
 import './index.css';
@@ -11,12 +10,26 @@ const Photos = lazy(() => import('./pages/Photos.jsx'));
 const Registry = lazy(() => import('./pages/Registry.jsx'));
 const Travel = lazy(() => import('./pages/Travel.jsx'));
 
+function RedirectHandler() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const p = searchParams.get('p');
+    if (p) {
+      navigate(p, { replace: true });
+    }
+  }, [searchParams, navigate]);
+
+  return null;
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<div></div>} />
+          <Route index element={<RedirectHandler />} />
           <Route path="events" element={
             <Suspense fallback={<div>Loading…</div>}>
               <Events />
