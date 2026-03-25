@@ -108,7 +108,7 @@ export default function Events() {
                 color: '#333',
                 margin: '0 0 0.5rem 0'
               }}>
-                Friday, June 27, 2026 — 3:00 PM
+                Saturday, June 27, 2026 — 3:00 PM
               </p>
               
               <p style={{ 
@@ -214,7 +214,7 @@ export default function Events() {
                 color: '#333',
                 margin: '0 0 0.5rem 0'
               }}>
-                Friday, June 27, 2026 — 5:30 PM
+                Saturday, June 27, 2026 — 5:30 PM
               </p>
               
               <p style={{ 
